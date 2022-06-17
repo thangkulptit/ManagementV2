@@ -9,7 +9,7 @@ import JwtPayload from './payloads/jwtPayload';
 import { AuthMessage } from './auth.constants';
 import TokenResponseDto from './dto/token-response.dto';
 import { genCode } from '../helpers/index'
-import * as moment from "moment" 
+import * as moment from "moment";
 import HttpResponse from '../common/constants/HTTPResponse'
 import ForgotPasswordDto from './dto/forgot-password.dto';
 @Injectable()
@@ -42,12 +42,7 @@ export class AuthService {
   async signIn(
     authCredentialsDto: AuthCreadentialsDto,
   ): Promise<HttpResponse> {
-    const payload = {
-      code: '123456789'
-    }
-    const jwtAccessToken = await this.jwtService.sign(payload);
-    // console.log(exp)
-    // console.log(currentTimeNow)
+    const jwtAccessToken = await this.jwtService.sign(authCredentialsDto);
     return {
       error: false,
       statusCode: HttpStatus.OK,

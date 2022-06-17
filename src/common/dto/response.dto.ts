@@ -26,3 +26,11 @@ export class ErrorResponse {
   })
   error: string;
 }
+
+export class SuccessResponse {
+  @ApiProperty({
+    description: 'Create Status.',
+    example: true,
+  })
+  success: boolean;
+}

@@ -104,7 +104,7 @@ export class UsersService {
     try {
       await newUser.save();
     } catch (error) {
-      if (error.code === '23505') {
+      if (error.code === 'ER_DUP_ENTRY') {
         // Duplicate email.
         throw new ConflictException(`Email ${CommonMessage.ALREADY_EXIST}`);
       }

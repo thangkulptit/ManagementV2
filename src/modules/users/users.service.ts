@@ -1,6 +1,5 @@
 import {
   ConflictException,
-  HttpStatus,
   Injectable,
   InternalServerErrorException,
   NotFoundException,
@@ -56,7 +55,7 @@ export class UsersService {
    * @param id User ID.
    * @param editUserDto EditUserDto.
    */
-  async update(id: string, editUserDto: any): Promise<UserRespondDto> {
+  async update(id: string, editUserDto: EditUserDto): Promise<UserRespondDto> {
     const { email, password, passCode } = editUserDto;
     const existUser = await this.usersRepository.findOne(id);
     if (!existUser) {

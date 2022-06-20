@@ -4,4 +4,5 @@ export enum CommonDescription {
   BAD_REQUEST = 'Bad request.',
   UNAUTHORIZED = 'Unauthorized.',
   UPDATE_ITEM_SUCESS = 'Update item success.',
+  DELETE_ITEM_SUCCESS = 'Delete item success.'
 }
